@@ -1,5 +1,7 @@
 package com.h2;
 
+import jdk.jshell.execution.Util;
+
 import java.time.LocalDate;
 import java.time.YearMonth;
 
@@ -12,12 +14,12 @@ public class SavingsCalculator {
         String[] debitsAsString = args[1].split(",");
         float[] credits = new float[creditsAsString.length];
         for (int i = 0; i < creditsAsString.length; i++) {
-            Float f = Float.parseFloat(creditsAsString[i]);
+            Float f = Utilities.getFloatValue(creditsAsString[i]);
             credits[i] = f;
         }
         float[] debits = new float[debitsAsString.length];
         for (int i = 0; i < debitsAsString.length; i++) {
-            Float f = Float.parseFloat(debitsAsString[i]);
+            Float f = Utilities.getFloatValue(debitsAsString[i]);
             debits[i] = f;
         }
 
